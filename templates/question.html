@@ -1,0 +1,4017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+    <style>
+        .col.s12 > .btn {
+            width: 100%;
+        }
+
+        /* label focus color */
+        .input-field input:focus + label {
+            color: indigo !important;
+        }
+
+        /* label underline focus color */
+        .row .input-field input:focus {
+            border-bottom: 1px solid indigo !important;
+            box-shadow: 0 1px 0 0 indigo !important
+        }
+    </style>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+
+<body>
+
+<form action="">
+    <!-- 姓名  -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="name" type="text" required="" aria-required="true">
+            <label><b>*1.姓名</b></label>
+        </div>
+    </div>
+    <!-- 年龄 -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="age" type="text" required="" aria-required="true">
+            <label><b>*2.年龄</b></label>
+        </div>
+    </div>
+
+    <!-- 性别  -->
+    <div class="container">
+        <label><b>*3.性别 </b></label>
+        <p>
+            <label>
+                <input name="gender" type="radio" value="male" checked/>
+                <span>男</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="gender" type="radio" value="female"/>
+                <span>女</span>
+            </label>
+        </p>
+    </div>
+    <!-- 联系方式 -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="contact" type="text">
+            <label><b>4.联系方式</b></label>
+        </div>
+    </div>
+
+    <!-- 身高 -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="height" type="text" required="" aria-required="true">
+            <label><b>*5身高</b></label>
+        </div>
+    </div>
+    <!-- 体重  -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="weight" type="text" required="" aria-required="true">
+            <label><b>*6体重</b></label>
+        </div>
+    </div>
+    <!-- 腰围 -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="waistline" type="text" required="" aria-required="true">
+            <label><b>*7.腰围</b></label>
+        </div>
+    </div>
+
+    <!-- 受教育程度 -->
+    <div class="container">
+        <label><b>*8.受教育程度 </b></label>
+        <p>
+            <label>
+                <input name="education" type="radio" value="highschool" checked/>
+                <span>高中及以下学历</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="education" type="radio" value="bachelor"/>
+                <span>本科或研究生学历</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="education" type="radio" value="doctor"/>
+                <span>博士以上学历</span>
+            </label>
+        </p>
+    </div>
+    <!-- 吸烟 -->
+    <div class="container">
+        <label><b>*9.您是否有吸烟史?如果有，请注明每周抽几根? </b></label>
+        <p>
+        <div class="row"></label>
+            <label class="col s6">
+                <input name="cigarette" type="radio" value="yes" checked/>
+                <span>
+
+                        是 <br>
+                    <b>每周几根:</b>
+                    </span>
+            </label>
+            <input class="col s6" placeholder="" name="cigarette_number" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="cigarette" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </div>
+        </p>
+    </div>
+    <!-- 退役军人 -->
+    <div class="container">
+        <label><b>10*. 您是否是服兵役/退伍军人身份? [单选题] * </b></label>
+        <p>
+            <label>
+                <input name="army" type="radio" value="yes" checked/>
+                <span>是</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="army" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </p>
+    </div>
+    <!-- 高血压/糖尿病   -->
+    <div class="container">
+        <label><b>*11.您是否被确诊为高血压/糖尿病/心血管疾病/癌症?如果有，请注明是什么疾病 </b></label>
+        <p>
+        <div class="row">
+            <label class="col s6">
+                <input name="hyper" type="radio" value="yes" checked/>
+                <span>
+
+                            是<br>
+                            <b>什么疾病: </b>
+                        </span>
+            </label>
+            <input class="col s6" placeholder="" name="hyper_type" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="hyper" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </div>
+        </p>
+    </div>
+
+    <!-- 先天性 -->
+    <div class="container">
+        <label><b>*12.您是否被确诊过先天性或儿童期感音神经性耳聋/声肿瘤/特殊的耳科疾病，如耳硬化症或梅尼埃病,如果有，请注明是什么病 [填空题] </b></label>
+        <p>
+        <div class="row">
+            <label class="col s6">
+                <input name="congenital" type="radio" value="yes" checked/>
+                <span>
+
+                            是<br>
+                            <b>什么疾病: </b>
+                        </span>
+            </label>
+            <input class="col s6" placeholder="" name="congenital_type" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="congenital" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </div>
+        </p>
+    </div>
+    <!-- 药物 -->
+    <div class="container">
+        <label><b>*13.您近期有无服药？如果有，请大致注明是什么种类的药品 </b></label>
+        <p>
+        <div class="row">
+            <label class="col s6">
+                <input name="medicine" type="radio" value="yes" checked/>
+                <span>
+
+                            是<br>
+                            <b>什么药物: </b>
+                        </span>
+            </label>
+            <input class="col s6" placeholder="" name="medicine_type" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="medicine" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </div>
+        </p>
+    </div>
+    <!-- 听力损失 -->
+    <div class="container">
+        <label><b>*14.您是否有听力损失?如果有，单侧还是双侧?是什么程度的听力损失？ </b></label>
+        <p>
+        <div class="row">
+            <label class="col s6">
+                <input name="hearingloss" type="radio" value="no" checked/>
+                <span>
+
+                            否<br>
+
+                        </span>
+            </label>
+
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="hearingloss" type="radio" value="one"/>
+                <span>单侧</span>
+            </label>
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="hearingloss" type="radio" value="both"/>
+                <span>双侧</span>
+            </label>
+        </div>
+        </p>
+        <div class="row">
+            <p class="col s6"> 程度：</p>
+            <input class="col s6" placeholder="" name="loss_degree" type="text">
+
+
+        </div>
+    </div>
+
+    <!-- 儿科家族史 -->
+    <div class="container">
+        <label><b>*15.您是否有耳科疾病家族史？如果有，请注明什么疾病 </b></label>
+        <p>
+        <div class="row">
+            <label class="col s6">
+                <input name="family" type="radio" value="yes" checked/>
+                <span>
+
+                            是<br>
+                            <b>什么疾病: </b>
+                        </span>
+            </label>
+            <input class="col s6" placeholder="" name="family_type" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="family" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </div>
+        </p>
+    </div>
+    <!-- 工作中暴露 -->
+    <div class="container">
+        <label><b>16*.您是否在工作中暴露于噪音至少三个月（指噪音太大，以至于你必须用高声说话才能被听到）? </b></label>
+        <p>
+            <label>
+                <input name="work" type="radio" value="yes" checked/>
+                <span>是</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="work" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </p>
+    </div>
+    <!-- 二十四小时 -->
+    <div class="container">
+        <label><b>12. 您是否在过去24h内有噪声暴露史? </b></label>
+        <p>
+            <label>
+                <input name="fortytwo" type="radio" value="yes" checked/>
+                <span>是</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="fortytwo" type="radio" value="no"/>
+                <span>否</span>
+            </label>
+        </p>
+    </div>
+    <br>
+    <h5>膳食问卷</h5>
+    <br>
+    <hr>
+    <!-- 米饭次数 -->
+    <div class="container">
+        <label><b>食用米饭的次数</b></label>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="ricetime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 米饭使用量 -->
+    <div class="container">
+        <label><b>每次米饭的食用量</b></label>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="riceamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 粥 -->
+    <div class="container">
+        <label><b>食用粥、稀饭或泡饭的次数</b></label>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridge" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+
+        <!-- 粥量 -->
+    </div>
+    <div class="container">
+        <label><b>每次粥、稀饭或泡饭的食用量</b></label>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="porridgeamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 使用面分类食物次数 -->
+    <div class="container">
+        <label><b>食用面粉类食物(馒头、面包、面条、饼)的次数</b></label>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flourtime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 面食量  -->
+    <div class="container">
+        <label><b>每次面粉类食物(馒头、面包、面条、饼)食用量</b></label>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="flouramount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 甜食次数 -->
+    <div class="container">
+        <label><b>食用甜食、点心、蛋糕的次数</b></label>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="desserttime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!-- 甜食用量 -->
+    <div class="container">
+        <label><b>每次甜食、点心、蛋糕的食用量</b></label>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="dessertamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 油炸次数 -->
+    <div class="container">
+        <label><b>食用油炸食物(油条、油饼)的次数</b></label>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedtime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 油炸食量 -->
+    <div class="container">
+        <label><b>每次油炸食物(油条、油饼、炸薯条、炸鸡翅、炸鸡腿、炸猪捧等)的食用量是</b></label>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="0" checked/>
+                <span>1/2个及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="1" checked/>
+                <span>一个（2两）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="3" checked/>
+                <span>2个（4两）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="friedamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 包子次数 -->
+    <div class="container">
+        <label><b>食用有馅类食物(包子、馄饨、饺子)的次数</b></label>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baozitime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 包子量 -->
+    <div class="container">
+        <label><b>每次有馅类食物(包子、馄饨、饺子)的食用量是</b></label>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baoziamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 粗杂粮次数 -->
+
+    <div class="container">
+        <label><b>食用粗杂粮(包括糙米、小米、玉米、惹米、燕麦、红小豆、绿豆等))的次数
+        </b></label>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caotime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!-- 糙杂粮量-->
+
+    <div class="container">
+        <label><b>每次粗杂粮的食用量
+        </b></label>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="caoamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!--   使用薯类 次数-->
+
+   <div class="container">
+            <label><b>食用薯类(包括红薯、土豆、芋头、山药、魔芋等)的次数 [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="0" checked />
+                    <span>从不吃</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="1" checked />
+                    <span>每月少于1次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="2" checked />
+                    <span>每月1～3次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="3" checked />
+                    <span>每周1～2次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="4" checked />
+                    <span>每周3～4次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="5" checked />
+                    <span>每周5～6次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="6" checked />
+                    <span>每天1次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="7" checked />
+                    <span>每天2次</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="shutime" type="radio" value="8" checked />
+                    <span>每天3次以上</span>
+                </label>
+            </p>
+
+    </div>
+
+    <!--薯类的数量-->
+
+    <div class="container">
+        <label><b>每次薯类(包括红薯、土豆、芋头、山药、魔芋等)的食用量是
+        </b></label>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="shuamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!--牛奶次数-->
+
+    <div class="container">
+        <label><b>食用牛奶、酸奶或奶粉的次数
+        </b></label>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milktime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!--牛奶量-->
+
+    <div class="container">
+        <label><b>每次牛奶、酸奶或奶粉的食用量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="0" checked/>
+                <span>50毫升及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="1" checked/>
+                <span>100毫升</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="2" checked/>
+                <span>200毫升</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="3" checked/>
+                <span>300毫升</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="4" checked/>
+                <span>400毫升及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="milkamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!--    鸡蛋次数-->
+
+    <div class="container">
+        <label><b>食用鸡蛋或鸭蛋的次数
+        </b></label>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggtime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!--鸡蛋量-->
+
+    <div class="container">
+        <label><b>每次鸡蛋或鸭蛋的食用量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="0" checked/>
+                <span>半个及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="1" checked/>
+                <span>2/3个</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="2" checked/>
+                <span>1个</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="3" checked/>
+                <span>2个</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="4" checked/>
+                <span>3个及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="eggamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用红肉类菜肴(如猪、牛、羊肉)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeattime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次红肉类菜肴的食用量是
+        </b></label>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="redmeatamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!---->
+
+    <div class="container">
+        <label><b>食用家禽类菜肴(如鸡、鸭、鹅肉)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultrytime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次家禽类菜肴的食用量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="poultryamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用加工肉制品(如香肠、熏肉、午餐肉、火腿等)的次数
+        </b></label>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausagetime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次加工肉制品(如香肠、熏肉、午餐肉、火腿等)的食用量是
+        </b></label>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="sausageamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用河鲜类菜肴(如青鱼、鲈鱼，鲢鱼、河虾等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexiantime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次河鲜类菜肴(如青鱼、鲈鱼，鲢鱼、河虾等)的食用量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="hexianamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用海鲜类菜肴(如带鱼，鲳鱼、黄鱼、海虾等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodtime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用海鲜类菜肴(如带鱼，鲳鱼、黄鱼、海虾等)的量是[单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="seafoodamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用豆制品类菜肴(如豆腐、香干、素鸡、百叶结等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufutime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用豆制品类菜肴的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="doufuamoount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用豆制品类菜肴的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nuttime" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!--        -->
+
+    <div class="container">
+        <label><b>每次食用豆制品类菜肴的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="nutamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用素菜类菜肴(如空心菜、青椒土豆丝等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetariantime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用素菜类菜肴(如空心菜、青椒土豆丝等)的量是[单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="vegetarianamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用菌菇类蔬菜(如蘑菇，香菇、草菇、平菇等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomtime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用菌菇类蔬菜(如蘑菇，香菇、草菇、平菇等)的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="0" checked/>
+                <span>半两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="1" checked/>
+                <span>1两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="2" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="3" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="4" checked/>
+                <span>4两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="mashroomamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用水果(如苹果、梨、桃、香蕉、葡萄、橙子、橘子、西瓜等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitstime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次食用水果的量是[单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="fruitsamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>饮用甜饮料(如可乐、雪碧、冰红茶、运动饮料等)的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinktime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次饮用甜饮料的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="0" checked/>
+                <span>半杯（100毫升）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="1" checked/>
+                <span>1杯（200毫升）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="2" checked/>
+                <span>1罐（350毫升）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="3" checked/>
+                <span>2杯（400毫升）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="4" checked/>
+                <span>1瓶（550毫升）以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="drinkamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>食用啤酒的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beertime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!--        -->
+
+    <div class="container">
+        <label><b>每次饮用啤酒的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="0" checked/>
+                <span>半瓶及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="1" checked/>
+                <span>2/3瓶</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="2" checked/>
+                <span>1瓶（650毫升）</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="3" checked/>
+                <span>2瓶</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="4" checked/>
+                <span>3瓶及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="beeramount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!--        -->
+
+    <div class="container">
+        <label><b>食用黄酒白酒的次数 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="0" checked/>
+                <span>从不吃</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="1" checked/>
+                <span>每月少于1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="2" checked/>
+                <span>每月1～3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="3" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="4" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="5" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="6" checked/>
+                <span>每天1次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="7" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiutime" type="radio" value="8" checked/>
+                <span>每天3次以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>每次饮用黄酒白酒的量是 [单选题] *
+        </b></label>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="0" checked/>
+                <span>1两及以下</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="1" checked/>
+                <span>2两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="2" checked/>
+                <span>3两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="3" checked/>
+                <span>4两</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="4" checked/>
+                <span>5两及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="baijiuamount" type="radio" value="5" checked/>
+                <span>不适用</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!--        -->
+
+    <div class="container">
+        <label><b>饮用水的次数
+        </b></label>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="0" checked/>
+                <span>每周1～2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="1" checked/>
+                <span>每周3～4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="2" checked/>
+                <span>每周5～6次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="3" checked/>
+                <span>每天2次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="4" checked/>
+                <span>每天3次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="5" checked/>
+                <span>每天4次</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="watertime" type="radio" value="6" checked/>
+                <span>每天5次及以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!---->
+
+    <div class="container">
+        <label><b>一日引用水的量[每杯250ml]
+        </b></label>
+
+        <p>
+            <label>
+                <input name="wateramount" type="radio" value="0" checked/>
+                <span>1/3杯</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="wateramount" type="radio" value="1" checked/>
+                <span>1/2杯及以上</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="wateramount" type="radio" value="2" checked/>
+                <span>2杯</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="wateramount" type="radio" value="3" checked/>
+                <span>3杯</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="wateramount" type="radio" value="4" checked/>
+                <span>4杯及以上</span>
+            </label>
+        </p>
+
+    </div>
+    <!--以上是否覆盖平时饮食-->
+    <div class="container">
+        <label><b>以上食物是否覆盖你平时的饮食 </b></label>
+        <p>
+        <div class="row"></label>
+            <label class="col s6">
+                <input name="coverdiet" type="radio" value="no" checked/>
+                <span>
+
+                        否  <br>
+                    <b>请补充说明:</b>
+                    </span>
+            </label>
+            <input class="col s6" placeholder="" name="coverdiet_text" type="text">
+        </div>
+        </p>
+        <p>
+        <div class="row">
+            <label class="col s12">
+                <input name="coverdiet" type="radio" value="yes"/>
+                <span>是</span>
+            </label>
+        </div>
+        </p>
+    </div>
+    <h5>运动问卷</h5>
+    <hr>
+    <!--z-->
+
+    <div class="container">
+        <label><b>在过去7天内,您在工作中有几天参加了重体力活动(如搬运重物、挖掘、爬楼梯等)? [单选题] * （注意只考虑那些你每次至少做了10分钟的重体力活动,工作以外的活动不包括在内。）
+        </b></label>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="0" checked/>
+                <span>0 (请跳至第65题)</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="1" checked/>
+                <span>1</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="2" checked/>
+                <span>2</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="3" checked/>
+                <span>3</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="4" checked/>
+                <span>4</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="5" checked/>
+                <span>5</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="6" checked/>
+                <span>6</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="activity" type="radio" value="7" checked/>
+                <span>7</span>
+            </label>
+        </p>
+
+    </div>
+
+
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="activity_time" type="text" required="" aria-required="true">
+            <label><b>在这些天的工作中,每天花多长时间进行重体力活动?
+                分钟╱天 [填空题] *
+            </b></label>
+        </div>
+    </div>
+    <!---->
+
+
+    <div class="container">
+        <label><b>65. 在过去7天内,您在工作中有几天参加了中度体力活动(如提拎小型物品等)? [单选题] *仍旧只考虑那些你每次至少做了10分钟的体力活动(注意不包括步行
+        </b></label>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="0" checked/>
+                <span>0 (请跳至第67题)</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="1" checked/>
+                <span>1</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="2" checked/>
+                <span>2</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="3" checked/>
+                <span>3</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="4" checked/>
+                <span>4</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="5" checked/>
+                <span>5</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="6" checked/>
+                <span>6</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input name="midactivity" type="radio" value="7" checked/>
+                <span>7</span>
+            </label>
+        </p>
+
+    </div>
+
+    <!---->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="midactivity_time" type="text" required="" aria-required="true">
+            <label><b>在这些天的工作中,每天花多长时间进行中度体力活动?
+     分钟╱天 [填空题] *
+            </b></label>
+        </div>
+    </div>
+
+
+<!---->
+
+   <div class="container">
+            <label><b>67.在过去7天内,您有几天工作中步行时间持续超过10分钟? [单选题] *(注意不包括上下班路上的步行交通时间)
+</b></label>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="0" checked />
+                    <span>0 (请跳至第69题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkover10" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="walktime" type="text" required="" aria-required="true">
+            <label><b>通常在工作中每天有多长时间在步行?
+     分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+
+   <div class="container">
+            <label><b>69.在过去7天内,您有几天乘车外出,如火车、公共汽车、汽车或电车? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="0" checked />
+                    <span>0 (请跳至第71题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="ride" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+       <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="ridetime" type="text" required="" aria-required="true">
+            <label><b>.在这些天里，每天乘车花多长时间？
+      分钟╱天 [填空题] *
+
+
+            </b></label>
+        </div>
+    </div>
+    <!-- 提交按钮 -->
+
+   <div class="container">
+            <label><b>在过去7天内,您有几天骑自行车从一个地方到另一个地方,且持续时间超过10分钟? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="0" checked />
+                    <span>0 (请跳至第73题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="bikedays" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+
+<!--    -->
+        <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="biketime" type="text" required="" aria-required="true">
+            <label><b>在这几天里,每天骑自行车花多长时间?
+     分钟╱天 [填空题] *
+
+</b></label>
+</div>
+</div>
+<!---->
+
+   <div class="container">
+            <label><b>73.在过去7天内,您有几天步行外出的持续时间超过10分钟? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="0" checked />
+                    <span>0 (请跳至第75题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="walkout10" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+
+
+
+          
+<!--    -->
+      <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="walkamount" type="text" required="" aria-required="true">
+            <label><b>在这几天里,每天步行花多长时间?
+      分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+
+<br><br><br><br><br><br>
+    <h5>日常生活</h5>
+<!--    -->
+
+   <div class="container">
+            <label><b>75.在过去7天内,您有几天参与了持续时间超过10分钟的 重体力家务劳动（如搬运重物、砍柴、扫雪、拖地板等）? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="0" checked />
+                    <span>0 (请跳至第77题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="houseworktime" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="houseworkamount" type="text" required="" aria-required="true">
+            <label><b>在这些天里,每天花多长时间进行重体力家务劳动?
+      分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+
+   <div class="container">
+            <label><b>在过去7天内,您有几天参与了持续时间超过10分钟的 中度体力家务劳动（如提拎小型物品、扫地、擦窗户、整理房间，做饭、洗衣服等）? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="0" checked />
+                    <span>0 (请跳至第79题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midhousetime" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+      <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="midhousetime" type="text" required="" aria-required="true">
+            <label><b>在这些天里,每天花多长时间进行中度体力家务劳动?
+       分钟╱天 [填空题] *
+
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+
+   <div class="container">
+            <label><b>79.在过去7天内的闲暇时间里,你每次散步至少10分钟的有多少天? [单选题] *(不包括您已描述过的步行时间)
+</b></label>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="0" checked />
+                    <span>0 (请跳至第81题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="sanbu10" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+      <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="sanbuamount" type="text" required="" aria-required="true">
+            <label><b>这些天里,每天花在散步中的时间是多少?
+       分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+
+   <div class="container">
+            <label><b>81.在过去7天内的闲暇时间,您有几天参加了持续时间超过10分钟的重体力活动的体育锻炼(如有氧健身、跑步、快速骑车、游泳,及足球篮球类活动等)? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="0" checked />
+                    <span>0 (请跳至第83题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="freetimework" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+<!---->
+      <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="heavyamount" type="text" required="" aria-required="true">
+            <label><b>这些天里,每天花在散步中的时间是多少?
+       分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+
+   <div class="container">
+            <label><b>83.在过去7天内,您有几天参加了持续时间超过10分钟的中度体力活动的体育锻炼(如有规律地骑自行车,有规律地游泳,打网球等)? [单选题] *
+</b></label>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="0" checked />
+                    <span>0 (请跳至第85题)</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="1" checked />
+                    <span>1</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="2" checked />
+                    <span>2</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="3" checked />
+                    <span>3</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="4" checked />
+                    <span>4</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="5" checked />
+                    <span>5</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="6" checked />
+                    <span>6</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input name="midexe10" type="radio" value="7" checked />
+                    <span>7</span>
+                </label>
+            </p>
+
+    </div>
+
+<!--    -->
+     <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="midexeamount" type="text" required="" aria-required="true">
+            <label><b>84.在这些天里,每天花多长时间进行中度体力活动体育锻炼?
+       分钟╱天 [填空题] *
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+    <h5>静坐时间</h5>
+<!--    -->
+     <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="worksittime" type="text" required="" aria-required="true">
+            <label><b>85.在过去7天内,您工作日每天花在坐姿状态中的时间是多少?
+       分钟╱天 [填空题] *
+
+
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+     <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="weeksittime" type="text" required="" aria-required="true">
+            <label><b>86.在过去7天内,您周末或休息日每天花在坐姿状态中的时间是多少?
+       分钟╱天 [填空题] *
+
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+    <h5>睡眠时间</h5>
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="worksleeptime" type="text" required="" aria-required="true">
+            <label><b>87.在过去7天内，您工作日每天花在睡眠（包括午睡中）的时间是多少？
+       分钟/天 [填空题] *
+
+
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input placeholder="" name="weeksleeptime" type="text" required="" aria-required="true">
+            <label><b>88.在过去7天内，您周末或休息日每天花在睡眠的时间是多少？
+       分钟/天 [填空题] *
+
+
+
+
+            </b></label>
+        </div>
+    </div>
+<!--    -->
+    <input type="text" hidden="true" name="id" value="{{id}}">
+    <div class="row">
+        <button class="btn waves-effect waves-light col s12" type="submit">提交
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+
+</form>
+<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+</body>
+</html>
